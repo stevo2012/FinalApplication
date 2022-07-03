@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_gradient">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/squareFootText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:fontFamily="serif"
+                android:text="Square Footage  "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/squareFootEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="1234567890"
+                android:maxLength="6"
+                android:hint="Required"
+                android:inputType="number" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/bathroomText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:fontFamily="serif"
+                android:text="Bathrooms  "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/bathroomEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="1234567890"
+                android:maxLength="2"
+                android:hint="Required"
+                android:inputType="number" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/kitchenText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:fontFamily="serif"
+                android:text="Kitchens:  "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/kitchenEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="1234567890"
+                android:maxLength="2"
+                android:hint="Required"
+                android:inputType="number" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/laundryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:fontFamily="serif"
+                android:text="Laundry Rooms:  "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/laundryEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="1234567890"
+                android:maxLength="2"
+                android:hint="Required"
+                android:inputType="number" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/modulesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:fontFamily="serif"
+                android:text="Modules:  "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/modulesEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="1234567890"
+                android:maxLength="2"
+                android:hint="Required"
+                android:inputType="number" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/AddressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:fontFamily="serif"
+                android:text="City and State  "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/AddressEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLength="20"
+                android:digits = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,"
+                android:hint="City,ST" />
+
+        </TableRow>
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit" />
+
+        <TextView
+            android:id="@+id/list2"
+            android:layout_width="382dp"
+            android:layout_height="259dp"
+            android:background="@color/cardview_dark_background"
+            android:text="SQL Data"
+            android:textColor="#ff0000"
+            android:textSize="20dp" />
+    </TableLayout>
+</ScrollView>
+
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/bg_gradient"/>
+    <item android:bottom="30dp">
+        <bitmap
+            android:gravity="bottom"
+            android:src="@drawable/efficient_house_small"/>
+    </item>
+    <item android:top="5dp"> // setting the image from bottom
+        <bitmap
+            android:gravity="top"
+            android:src="@drawable/appwords"/>
+    </item>
+
+</layer-list>

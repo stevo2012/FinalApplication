@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_gradient">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:fontFamily="serif"
+                android:text="80 Gal Hot Water Tank"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/waterTankEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="1234567890"
+                android:maxLength="1"
+                android:hint="Required"
+                android:inputType="number" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:fontFamily="serif"
+                android:text="On Demand Hot Water"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/waterSystemEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="1234567890"
+                android:maxLength="1"
+                android:hint="Required"
+                android:inputType="number" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:fontFamily="serif"
+                android:text="Microwave"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/microwaveEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="1234567890"
+                android:maxLength="2"
+                android:hint="Required"
+                android:inputType="number" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:fontFamily="serif"
+                android:text="Dishwasher"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/dishwasherEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="1234567890"
+                android:maxLength="1"
+                android:hint="Required"
+                android:inputType="number" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:fontFamily="serif"
+                android:text="Bath"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/bathEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="1234567890"
+                android:maxLength="1"
+                android:hint="Required"
+                android:inputType="number" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:fontFamily="serif"
+                android:text="Washer"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/washerEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="1234567890"
+                android:maxLength="1"
+                android:hint="Required"
+                android:inputType="number" />
+
+        </TableRow>        <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:fontFamily="serif"
+            android:text="Dryer"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/dryerEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:digits="1234567890"
+            android:maxLength="1"
+            android:hint="Required"
+            android:inputType="number" />
+
+    </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:fontFamily="serif"
+                android:text="Stove"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/stoveEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="1234567890"
+                android:maxLength="1"
+                android:hint="Required"
+                android:inputType="number" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:fontFamily="serif"
+                android:text="EV Charger"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/evChargerEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="1234567890"
+                android:maxLength="1"
+                android:hint="Required"
+                android:inputType="number" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/AddressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:fontFamily="serif"
+                android:text="City and State  "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/AddressEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLength="20"
+                android:digits = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,"
+                android:hint="City,ST" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:fontFamily="serif"
+                android:text="Propane Rate ($/Gal):"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/propaneEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLength="4"
+                android:digits="1234567890."
+                android:inputType="number"
+                android:hint="2.34"/>
+        </TableRow>
+
+
+
+            <Button
+                android:id="@+id/submit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+
+
+    </TableLayout>
+</ScrollView>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="@drawable/bg_gradient"-->
+<!--    android:orientation="vertical">-->
+
+<!--    <Switch-->
+<!--        android:id="@+id/switch1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="80 Gal Hot Water Tank" />-->
+
+<!--    <Switch-->
+<!--        android:id="@+id/switch2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="On Demand Hot Water System" />-->
+
+<!--    <Switch-->
+<!--        android:id="@+id/switch3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Microwave" />-->
+
+<!--    <Switch-->
+<!--        android:id="@+id/switch4"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Dishwasher" />-->
+
+<!--    <Switch-->
+<!--        android:id="@+id/switch5"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Bath" />-->
+
+<!--    <Switch-->
+<!--        android:id="@+id/switch6"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Laundry" />-->
+
+<!--    <Switch-->
+<!--        android:id="@+id/switch7"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Dryer" />-->
+
+<!--    <Switch-->
+<!--        android:id="@+id/switch8"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Stove" />-->
+
+<!--    <Switch-->
+<!--        android:id="@+id/switch9"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="EV Charger" />-->
+
+<!--    <LinearLayout-->
+
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="@drawable/bg_gradient"-->
+<!--        android:orientation="vertical">-->
+
+
+
+<!--        <Button-->
+<!--            android:id="@+id/submit_button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Submit" />-->
+
+<!--    </LinearLayout>-->
+
+<!--</LinearLayout>-->
