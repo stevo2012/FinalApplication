@@ -14,6 +14,7 @@ public class ResultActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,23 +34,25 @@ public class ResultActivity extends AppCompatActivity {
         String Washer = getIntent().getStringExtra("key8");
         String Dryer = getIntent().getStringExtra("key9");
         String Stove = getIntent().getStringExtra("key10");
-        String EVChager = getIntent().getStringExtra("key11");
+        String EVCharger = getIntent().getStringExtra("key11");
         String Propane = getIntent().getStringExtra("key12");
 
         Double propaneAmt = Double.valueOf(Propane);
+        Double btuDollarDouble = BTUPerGal/propaneAmt;
+        String btuPerDollar = String.valueOf(btuDollarDouble);
 
 
         loadList = (TextView) findViewById(R.id.resultLoadCalc);
-        loadList.setText(mDBHlpr.loadHandler("id,appName","AppLoads", finalStr));
+       // loadList.setText(mDBHlpr.loadHandler("id,appName","AppLoads", finalStr));
 
         loadList2 = (TextView) findViewById(R.id.resultLoadCalc2);
-        loadList2.setText(mDBHlpr.loadHandler("id,null,loadElectric,loadPropane", "AppLoads", finalStr));
+        loadList2.setText(mDBHlpr.loadHandler(waterTank, onDemandHW, Microwave, Dishwasher, Bath, Washer,Dryer, Stove, EVCharger));
 
         utilities = (TextView) findViewById(R.id.rateView);
         utilities.setText("Utility Company: " + utilName + "\nUtility Rate = " + rate);
 
         costView = (TextView) findViewById(R.id.resultCosts);
-        costView.setText(mDBHlpr.loadHandler2("id,appName,kwhday,btuday", "AppCost", finalStr + ",11,12", rate));
+        costView.setText(mDBHlpr.loadHandler2("id,appName,kwhday,btuday", "AppCost", finalStr + ",11,12", rate, btuPerDollar));
 
 
     }

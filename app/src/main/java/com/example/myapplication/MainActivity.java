@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         lst = (TextView) findViewById(R.id.list);
-        lst.setText(mDBHlpr.loadHandler("*", "AppLoads", "1, 2, 3, 4, 5, 6, 7, 8, 9"));
+        lst.setText(mDBHlpr .loadHandler("1","1","1","1","1","1","1","1","1"));
 
 
 

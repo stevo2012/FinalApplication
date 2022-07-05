@@ -53,7 +53,7 @@ public class RoomActivity extends AppCompatActivity {
         Button submitButton = findViewById(R.id.submit_button);
 
         lst = (TextView) findViewById(R.id.list2);
-        lst.setText(mDBHlpr.loadHandler( "*","AppLoads" ,finalString));
+       // lst.setText(mDBHlpr.loadHandler( "*","AppLoads" ,finalString));
 
 
 

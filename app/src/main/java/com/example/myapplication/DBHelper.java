@@ -82,7 +82,8 @@ public class DBHelper extends SQLiteAssetHelper {
         SQLiteDatabase.releaseMemory();
         super.close();
     }
-    public String loadHandler(String column, String tblName, String sqlinput){
+    public String loadHandler(String app1, String app2, String app3, String app4, String app5, String app6,
+                              String app7, String app8, String app9){
         String result_name = null;
         Number result_elec = null;
         Number result_prop = null;
@@ -96,33 +97,79 @@ public class DBHelper extends SQLiteAssetHelper {
         String result = "";
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor c = db.rawQuery("select " + column + " from " + tblName + " where id IN (" + sqlinput + ")", null);
+        Cursor c = db.rawQuery("select round(sum(\n" +
+                        "(select loadElectric from AppLoads where appName='Hot Water Tank') * " + app1 + "\n" +
+                        "+\n" +
+                        "(select loadElectric from AppLoads where appName='On Demand Hot Water')*" + app2 + "\n" +
+                        " +\n" +
+                        "(select loadElectric from AppLoads where appName='Microwave')*" + app3 + "\n" +
+                        "+\n" +
+                        "(select loadElectric from AppLoads where appName='Dishwasher')*" + app4 + "\n" +
+                        "+\n" +
+                        "(select loadElectric from AppLoads where appName='Bath')*" + app5 + "\n" +
+                        "+ \n" +
+                        "(select loadElectric from AppLoads where appName='Laundry')*" + app6 + "\n" +
+                        "+\n" +
+                        "(select loadElectric from AppLoads where appName='Dryer')*" + app7 + "\n" +
+                        "+\n" +
+                        "(select loadElectric from AppLoads where appName='Stove')*" + app8 + "\n" +
+                        "+\n" +
+                        "(select loadElectric from AppLoads where appName='EV Charger')*" + app9 + "\n" +
+                        "),2) as total_electric_load\n" +
+                        ",\n" +
+                        "sum(\n" +
+                        "(select loadPropane from AppLoads where appName='Hot Water Tank')*" + app1 + " \n" +
+                        " +\n" +
+                        "(select loadPropane from AppLoads where appName='Microwave')*" + app3 + "\n" +
+                        "+\n" +
+                        "(select loadPropane from AppLoads where appName='Dishwasher')*" + app4 + "\n" +
+                        "+\n" +
+                        "(select loadPropane from AppLoads where appName='Bath')*" + app5 + "\n" +
+                        "+ \n" +
+                        "(select loadPropane from AppLoads where appName='Laundry')*" + app6 + "\n" +
+                        "+\n" +
+                        "(select loadPropane from AppLoads where appName='Dryer')*" + app7 + "\n" +
+                        "+\n" +
+                        "(select loadPropane from AppLoads where appName='Stove')*" + app8 + "\n" +
+                        ") as total_propane_load"
+                , null);
+//                "where appName='Hot Water Tank') * 2 " +
+//                "+" +
+//                "()select loadElectric " +
+//                "from AppLoads " +
+//                "where appName='On Demand Hot Water')*2", null);
+        //Cursor c = db.rawQuery("select " + column + " from " + tblName + " where id IN (" + sqlinput + ")", null);
 
         while(c.moveToNext()) {
-            if (column.contains("appName")) {
-                result_name = c.getString(1);
-                result += result_name + System.getProperty("line.separator");
-
-            } else if (column.contains("*")) {
-                result_name = c.getString(1);
-                result_elec = c.getDouble(2);
-                result_prop = c.getDouble(3);
-
-                result += result_name + " " + result_elec + " " + result_prop + System.getProperty("line.separator");
-            } else {
-                result_elec = c.getDouble(2);
-                result_prop = c.getDouble(3);
-
-                result += result_elec + " " + result_prop + System.getProperty("line.separator");
-            }
-
+            result_elec = c.getDouble(0);
+            result_prop = c.getDouble(1);
+            result += result_elec + " " + result_prop + System.getProperty("line.separator");
         }
+//        while(c.moveToNext()) {
+//            if (column.contains("appName")) {
+//                result_name = c.getString(1);
+//                result += result_name + System.getProperty("line.separator");
+//
+//            } else if (column.contains("*")) {
+//                result_name = c.getString(1);
+//                result_elec = c.getDouble(2);
+//                result_prop = c.getDouble(3);
+//
+//                result += result_name + " " + result_elec + " " + result_prop + System.getProperty("line.separator");
+//            } else {
+//                result_elec = c.getDouble(2);
+//                result_prop = c.getDouble(3);
+//
+//                result += result_elec + " " + result_prop + System.getProperty("line.separator");
+//            }
+
+
         c.close();
         db.close();
 
         return result;
     }
-    public String loadHandler2(String column, String tblName, String sqlinput, String rate){
+    public String loadHandler2(String column, String tblName, String sqlinput, String rate, String btuPerDollar){
         try{
             createDatabase();
         }
@@ -131,7 +178,9 @@ public class DBHelper extends SQLiteAssetHelper {
         }
         String result = "";
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cost = db.rawQuery("select Round(SUM(kwhday * 30 * " + rate + "),2), round(SUM(btuday * 30 / 39122.64957),2) from appCost", null);
+        Cursor cost = db.rawQuery("select Round(SUM(kwhday * 30 * " + rate + "),2), round(SUM(btuday * 30 / "+ btuPerDollar +") + (sum((select kwhday from appCost where appName = 'EV Charger') +" +
+                "(select kwhday from appCost where appName = 'Exterior Outlets') + " +
+                "(select kwhday from appCost where appName = 'House Load')) * " + rate +"),2) from appCost", null);
 
         while(cost.moveToNext()){
             Number sumkwh = cost.getDouble(0);

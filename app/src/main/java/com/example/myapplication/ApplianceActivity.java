@@ -35,7 +35,7 @@ public class ApplianceActivity extends AppCompatActivity {
     String address = "";
     String utilName = "";
     String resRate = "";
-    String propaneText = "2.34";
+    String propaneText = "";
     EditText app1Text, app2Text, app3Text, app4Text, app5Text, app6Text, app7Text, app8Text, app9Text, addressEditText, propaneEditText;
 
 
